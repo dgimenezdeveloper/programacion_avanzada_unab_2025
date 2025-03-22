@@ -36,39 +36,3 @@ print(f"El area de la circunferencia es: {area_circunferencia(radio)}")
 print(f"El perimetro de la circunferencia es: {perimetro_circunferencia(radio)}")
 
 # Fin del programa
-
-# Usando POO
-
-class Figura:
-    def __init__(self, lado, base, altura, radio):
-        self.lado = lado
-        self.base = base
-        self.altura = altura
-        self.radio = radio
-
-    def area_cuadrado(self):
-        return self.lado ** 2
-
-    def perimetro_cuadrado(self):
-        return self.lado * 4
-
-    def area_rectangulo(self):
-        return self.base * self.altura
-
-    def perimetro_rectangulo(self):
-        return (self.base + self.altura) * 2
-
-    def area_circunferencia(self):
-        return 3.1416 * self.radio ** 2
-
-    def perimetro_circunferencia(self):
-        return 2 * 3.1416 * self.radio
-    
-figura = Figura(5, 10, 3, 4)
-print(f"El area del cuadrado es: {figura.area_cuadrado()}")
-print(f"El perimetro del cuadrado es: {figura.perimetro_cuadrado()}")
-print(f"El area del rectangulo es: {figura.area_rectangulo()}")
-print(f"El perimetro del rectangulo es: {figura.perimetro_rectangulo()}")
-print(f"El area de la circunferencia es: {figura.area_circunferencia()}")
-print(f"El perimetro de la circunferencia es: {figura.perimetro_circunferencia()}")
-# Fin del programa
