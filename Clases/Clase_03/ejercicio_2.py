@@ -29,6 +29,10 @@ class Punto():
     def distancia(self, p2):
         return math.sqrt((self.__x - p2.__x)**2 + (self.__y - p2.__y)**2) 
     
+    def mover(self, dx, dy):
+        self.__x += dx
+        self.__y += dy
+    
 #Prueba
 if __name__ == "__main__":
     p1 = Punto(4, 2)
