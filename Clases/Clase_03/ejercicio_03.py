@@ -17,27 +17,24 @@ class Linea:
         self._punto_a = punto_a
         self._punto_b = punto_b
 
-    def mueve_derecha(self, distancia):
-        self._punto_a.mueve_derecha(distancia)
-        self._punto_b.mueve_derecha(distancia)
-
-    def mueve_izquierda(self, distancia):
-        self._punto_a.mueve_izquierda(distancia)
-        self._punto_b.mueve_izquierda(distancia)
-
-    def mueve_arriba(self, distancia):
-        self._punto_a.mueve_arriba(distancia)
-        self._punto_b.mueve_arriba(distancia)
-
-    def mueve_abajo(self, distancia):
-        self._punto_a.mueve_abajo(distancia)
-        self._punto_b.mueve_abajo(distancia)
-
     def __str__(self):
-        return f"Linea({self._punto_a}, {self._punto_b})"
+        return f"Linea: {self._punto_a} - {self._punto_b}"
     
-    def distancia(self):
-        return math.sqrt((p2(0)-p1(0))**2 + (p2(1)-p1(1))**2)
+    def mueve_derecha(self, distancia):
+        self._punto_a.set_eje_x(self._punto_a.get_eje_x() + distancia)
+        self._punto_b.set_eje_x(self._punto_b.get_eje_x() + distancia)
+    
+    def mueve_izquierda(self, distancia):
+        self._punto_a.set_eje_x(self._punto_a.get_eje_x() - distancia)
+        self._punto_b.set_eje_x(self._punto_b.get_eje_x() - distancia)
+        
+    def mueve_arriba(self, distancia):  
+        self._punto_a.set_eje_y(self._punto_a.get_eje_y() + distancia)
+        self._punto_b.set_eje_y(self._punto_b.get_eje_y() + distancia)
+    
+    def mueve_abajo(self, distancia):
+        self._punto_a.set_eje_y(self._punto_a.get_eje_y() - distancia)
+        self._punto_b.set_eje_y(self._punto_b.get_eje_y() - distancia)
 
 if __name__ == "__main__":
     p1 = Punto(1, 2)
