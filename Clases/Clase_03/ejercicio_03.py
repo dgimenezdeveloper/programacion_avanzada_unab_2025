@@ -19,8 +19,25 @@ class Linea:
 
     def __str__(self):
         return f"Linea: {self._punto_a} - {self._punto_b}"
-    
+
     def mueve_derecha(self, distancia):
+        self._punto_a.mover(distancia, 0)
+        self._punto_b.mover(distancia, 0)
+
+    def mueve_izquierda(self, distancia):
+        self._punto_a.mover(-distancia, 0)
+        self._punto_b.mover(-distancia, 0)
+
+    def mueve_arriba(self, distancia):
+        self._punto_a.mover(0, distancia)
+        self._punto_b.mover(0, distancia)
+
+    def mueve_abajo(self, distancia):
+        self._punto_a.mover(0, -distancia)
+        self._punto_b.mover(0, -distancia)
+
+    # definicion de los metodos de movimiento usando set_eje_x y set_eje_y
+    """ def mueve_derecha(self, distancia):
         self._punto_a.set_eje_x(self._punto_a.get_eje_x() + distancia)
         self._punto_b.set_eje_x(self._punto_b.get_eje_x() + distancia)
     
@@ -35,6 +52,8 @@ class Linea:
     def mueve_abajo(self, distancia):
         self._punto_a.set_eje_y(self._punto_a.get_eje_y() - distancia)
         self._punto_b.set_eje_y(self._punto_b.get_eje_y() - distancia)
+ """
+
 
 if __name__ == "__main__":
     p1 = Punto(1, 2)
