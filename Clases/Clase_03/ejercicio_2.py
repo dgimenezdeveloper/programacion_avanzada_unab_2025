@@ -1,3 +1,5 @@
+import math
+
 class Punto():
     def __init__(self, x, y):
         self.__x = x
@@ -24,11 +26,18 @@ class Punto():
     def opuesto(self):
         return Punto(-self.__x, -self.__y)
     
+    def distancia(self, p2):
+        return math.sqrt((self.__x - p2.__x)**2 + (self.__y - p2.__y)**2) 
+    
 #Prueba
 if __name__ == "__main__":
-    p1 = Punto(3,4)
+    p1 = Punto(4, 2)
+    p2 = Punto(2, 2)
 
     p1.impresion()
     op = p1.opuesto()
     op.impresion()
     print(p1)
+
+    resultado = p1.distancia(p2)
+    print(resultado)

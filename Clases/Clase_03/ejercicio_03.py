@@ -8,6 +8,7 @@ Punto, que son utilizados para inicializar los atributos.
 ● mueve_arriba(float) Desplaza la línea hacia arriba la distancia que se indique.
 ● mueve_abajo(float) Desplaza la línea hacia abajo la distancia que se indique."""
 
+import math
 from ejercicio_2 import Punto
 
 
@@ -34,6 +35,9 @@ class Linea:
 
     def __str__(self):
         return f"Linea({self._punto_a}, {self._punto_b})"
+    
+    def distancia(self):
+        return math.sqrt((p2(0)-p1(0))**2 + (p2(1)-p1(1))**2)
 
 if __name__ == "__main__":
     p1 = Punto(1, 2)
