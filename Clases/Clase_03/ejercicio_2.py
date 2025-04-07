@@ -27,7 +27,6 @@ class Punto():
         return Punto(-self.__x, -self.__y)
     
     def distancia(self, p2):
-<<<<<<< HEAD
         return math.sqrt((self.__x - p2.__x)**2 + (self.__y - p2.__y)**2) 
     
 #Prueba
@@ -35,23 +34,10 @@ if __name__ == "__main__":
     p1 = Punto(4, 2)
     p2 = Punto(2, 2)
 
-=======
-        return math.sqrt((self.__x - p2.__x)**2 + (self.__y - p2.__y)**2)
-    
-#Prueba
-if __name__ == "__main__":
-    p1 = Punto(4,2)
-    p2 = Punto(2,2)
->>>>>>> refs/remotes/origin/main
     p1.impresion()
     op = p1.opuesto()
     op.impresion()
     print(p1)
-<<<<<<< HEAD
 
     resultado = p1.distancia(p2)
     print(resultado)
-=======
-    resultado = p1.distancia(p2)
-    print(resultado)
->>>>>>> refs/remotes/origin/main
