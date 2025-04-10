@@ -20,19 +20,19 @@ class Linea:
     def __str__(self):
         return f"Linea: {self._punto_a} - {self._punto_b}"
 
-    def mueve_derecha(self, distancia):
+    def mover_derecha(self, distancia):
         self._punto_a.mover(distancia, 0)
         self._punto_b.mover(distancia, 0)
 
-    def mueve_izquierda(self, distancia):
+    def mover_izquierda(self, distancia):
         self._punto_a.mover(-distancia, 0)
         self._punto_b.mover(-distancia, 0)
 
-    def mueve_arriba(self, distancia):
+    def mover_arriba(self, distancia):
         self._punto_a.mover(0, distancia)
         self._punto_b.mover(0, distancia)
 
-    def mueve_abajo(self, distancia):
+    def mover_abajo(self, distancia):
         self._punto_a.mover(0, -distancia)
         self._punto_b.mover(0, -distancia)
 
@@ -60,11 +60,11 @@ if __name__ == "__main__":
     p2 = Punto(3, 4)
     linea = Linea(p1, p2)
     print(linea)
-    linea.mueve_derecha(5)
+    linea.mover_derecha(5)
     print(linea)
-    linea.mueve_izquierda(3)
+    linea.mover_izquierda(3)
     print(linea)
-    linea.mueve_arriba(2)
+    linea.mover_arriba(2)
     print(linea)
-    linea.mueve_abajo(1)
+    linea.mover_abajo(1)
     print(linea)
