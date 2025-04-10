@@ -1,4 +1,5 @@
 class Persona():
+    """Clase que representa a una persona con un nombre."""
     def __init__(self, nombre):
         self.__nombre = nombre
     
@@ -12,6 +13,7 @@ class Persona():
         self.__nombre = nombre
 
 class Cancion():
+    """Clase que representa una canción con un título y un autor."""
     def __init__(self, titulo, autor):
         self.__titulo = titulo
         self.__autor = autor
@@ -31,7 +33,7 @@ class Cancion():
     def set_autor(self, autor):
         self.__autor = autor
 
-#Prueba
+###### Programa principal ######
 if __name__ == "__main__":
     persona_1 = Persona("QUEEN")
     print(persona_1)

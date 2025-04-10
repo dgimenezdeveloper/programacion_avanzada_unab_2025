@@ -9,10 +9,11 @@ Punto, que son utilizados para inicializar los atributos.
 ● mueve_abajo(float) Desplaza la línea hacia abajo la distancia que se indique."""
 
 import math
-from ejercicio_2 import Punto
+from Clases.Clase_03.ejercicio_02 import Punto
 
 
 class Linea:
+    """Clase que representa una línea en el plano cartesiano, definida por dos puntos."""
     def __init__(self, punto_a, punto_b):
         self._punto_a = punto_a
         self._punto_b = punto_b
@@ -54,7 +55,7 @@ class Linea:
         self._punto_b.set_eje_y(self._punto_b.get_eje_y() - distancia)
  """
 
-
+###### Programa principal ######
 if __name__ == "__main__":
     p1 = Punto(1, 2)
     p2 = Punto(3, 4)
