@@ -38,8 +38,8 @@ Libro: hereda de Publicacion, añade atributo autor (string) y redefine el méto
 
 Define en Python dos clases:
 
-Dispositivo: con atributo nombre (string) y método encender() que imprime "&lt;nombre> encendido".
-Telefono: hereda de Dispositivo, añade atributo numero (string) y redefine el método encender() para imprimir "&lt;nombre> (Número: &lt;numero>) encendido".
+Dispositivo: con atributo nombre (string) y método encender() que imprime "<nombre> encendido".
+Telefono: hereda de Dispositivo, añade atributo numero (string) y redefine el método encender() para imprimir "<nombre> (Número: &lt;numero>) encendido".
 
 ### Ejercicio 7:
 
@@ -53,7 +53,7 @@ ProductoConDescuento: hereda de Producto, añade atributo descuento (float) y re
 Define en Python dos clases:
 
 Forma: con método dibujar() que imprime "Dibujando una forma genérica".
-Circulo: hereda de Forma, añade atributo radio (float) y redefine el método dibujar() para imprimir "Dibujando un círculo de radio &lt;radio>".
+Circulo: hereda de Forma, añade atributo radio (float) y redefine el método dibujar() para imprimir "Dibujando un círculo de radio <radio>".
 
 ### Ejercicio 9:
 
@@ -66,5 +66,5 @@ CuentaCorriente: hereda de CuentaBancaria y añade un atributo limite_sobregiro 
 
 Define en Python dos clases:
 
-Electrodomestico: con atributo marca (string) y método informar() que devuelve "Electrodoméstico marca &lt;marca>".
-Lavadora: hereda de Electrodomestico, añade atributo capacidad (float) y redefine informar() para devolver "Lavadora marca &lt;marca>, capacidad: &lt;capacidad> kg".
+Electrodomestico: con atributo marca (string) y método informar() que devuelve "Electrodoméstico marca <marca>".
+Lavadora: hereda de Electrodomestico, añade atributo capacidad (float) y redefine informar() para devolver "Lavadora marca <marca>, capacidad: <capacidad> kg".
