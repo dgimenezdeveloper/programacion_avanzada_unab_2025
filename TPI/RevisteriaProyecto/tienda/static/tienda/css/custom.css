@@ -44,8 +44,6 @@ main {
 .masthead {
     position: relative;
     background-color: #343a40;
-    /* Imagen de fondo del proyecto original. Asume que está en static/tienda/img/ */
-    background: url("../img/comic-pow.jpeg") no-repeat center center; 
     background-size: cover;
     padding-top: 6rem;
     padding-bottom: 6rem;
