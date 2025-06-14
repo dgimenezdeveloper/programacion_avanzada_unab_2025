@@ -1,0 +1,64 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Tu Carrito de Compras{% endblock %}
+{% block header_title %}Carrito de Compras{% endblock %}
+
+{% block content %}
+{% with carrito_items=request.session.carrito.values %}
+    {% if carrito_items %}
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col" class="text-center">Cantidad</th>
+                    <th scope="col" class="text-end">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carrito_items %}
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ item.imagen }}" alt="{{ item.titulo }}" class="carrito-item-img me-3">
+                            <div>
+                                <h5 class="mb-0">{{ item.titulo }}</h5>
+                                <small class="text-muted">{{ item.categoria|title }}</small>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${{ item.precio }}</td>
+                    <td class="text-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="{% url 'tienda:carrito_restar' item.producto_id %}" class="btn btn-outline-secondary btn-sm">-</a>
+                            <span class="mx-2">{{ item.cantidad }}</span>
+                            <a href="{% url 'tienda:carrito_agregar' item.producto_id %}" class="btn btn-outline-secondary btn-sm">+</a>
+                        </div>
+                    </td>
+                    <td class="text-end fw-bold">${{ item.subtotal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot class="table-group-divider">
+                <tr>
+                    <td colspan="3" class="text-end fs-4"><strong>Total:</strong></td>
+                    <td class="text-end fs-4 fw-bolder text-success"><strong>${{ importe_total_carrito|floatformat:2 }}</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="d-flex justify-content-end mt-4">
+        <a href="{% url 'tienda:carrito_limpiar' %}" class="btn btn-danger me-2">Limpiar Carrito</a>
+        <a href="#" class="btn btn-success">Proceder al Pago (Simulado)</a>
+    </div>
+    {% else %}
+    <div class="alert alert-info text-center" role="alert">
+        <h4 class="alert-heading">Tu carrito está vacío</h4>
+        <p>Aún no has añadido ningún producto. ¡Explora nuestro catálogo para encontrar algo que te guste!</p>
+        <hr>
+        <a href="{% url 'tienda:index' %}" class="btn btn-primary">Volver a la tienda</a>
+    </div>
+    {% endif %}
+{% endwith %}
+{% endblock %}

@@ -1,0 +1,170 @@
+/* vietnamese */
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bangers/v24/FeVQS0BTqb0h60ACH5FQ2Ixi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bangers/v24/FeVQS0BTqb0h60ACH5BQ2Ixi.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bangers/v24/FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* Estilos Generales */
+body {
+    padding-top: 56px; /* Altura de la navbar para evitar que el contenido se oculte detrás */
+    background-color: #f0f2f5; /* Un gris claro suave para el fondo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+/* Encabezado Principal (Masthead) */
+.masthead {
+    position: relative;
+    background-color: #343a40;
+    /* Imagen de fondo del proyecto original. Asume que está en static/tienda/img/ */
+    background: url("../img/comic-pow.jpeg") no-repeat center center; 
+    background-size: cover;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    color: white;
+}
+
+.masthead:before {
+    content: "";
+    position: absolute;
+    background-color: rgba(28, 55, 94, 0.6); /* Color con opacidad */
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Tarjetas de Producto */
+.card-product-list {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: none;
+}
+
+.card-product-list:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 350px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+}
+
+/* Detalle del Producto */
+.producto-detail-img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Carrito de Compras */
+.carrito-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Formularios */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Navbar */
+.navbar {
+    border-bottom: 3px solid #f2c102; /* Borde amarillo-dorado temático */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-family: 'Bangers', cursive; /* Si incluyes una fuente temática como de cómic */
+    font-size: 1.8rem;
+    color: #f2c102 !important;
+}
+
+.nav-link {
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #f2c102 !important;
+}
+
+.dropdown-menu {
+    background-color: #343a40; /* Fondo oscuro para el dropdown */
+}
+.dropdown-item {
+    color: #f8f9fa; /* Texto claro */
+}
+.dropdown-item:hover {
+    background-color: #495057; /* Un poco más claro al pasar el mouse */
+    color: #f2c102;
+}
+
+/* Footer */
+footer.footer {
+    /* Color de fondo rojo oscuro, similar al de la imagen */
+    background-color: #b94848; 
+    
+    /* El color del texto debe ser más claro para el contraste */
+    color: #f8f9fa; 
+    
+    border-top: 3px solid #f2c102;
+    flex-shrink: 0;
+}
+
+/* Estilos para los enlaces de texto en el footer */
+.footer-link {
+    color: #ffffff; /* Color blanco para los enlaces */
+    text-decoration: none;
+    transition: text-decoration 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icon {
+    color: #ffffff; /* Color blanco para los iconos */
+    transition: color 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    color: #f2c102; /* Cambia a color amarillo al pasar el mouse */
+}

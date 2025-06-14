@@ -1,0 +1,40 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block header_title %}
+    Nuestros {{ categoria_titulo }}
+{% endblock %}
+
+{% block content %}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    {% for producto in productos %}
+    <div class="col">
+        <div class="card h-100 card-product-list">
+             <a href="{% url 'tienda:producto_detail' producto.id %}" class="text-decoration-none text-dark">
+                {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.titulo }}">
+                {% else %}
+                    <img src="{% static 'tienda/img/placeholder.png' %}" class="card-img-top" alt="Sin imagen">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.titulo }}</h5>
+                    <p class="card-text text-muted">
+                        {% if producto.autor %}{{ producto.autor }}{% else %}Artículo de Colección{% endif %}
+                    </p>
+                    <p class="card-text fs-5 fw-bold text-success">${{ producto.precio }}</p>
+                </div>
+            </a>
+            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                 <a href="{% url 'tienda:carrito_agregar' producto.id %}" class="btn btn-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info text-center" role="alert">
+            No hay productos en esta categoría por el momento.
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

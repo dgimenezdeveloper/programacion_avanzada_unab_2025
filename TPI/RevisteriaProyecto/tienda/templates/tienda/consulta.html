@@ -1,0 +1,18 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Contacto{% endblock %}
+{% block header_title %}¡Hablemos!{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2 class="text-center mb-4">Envíanos tu Consulta</h2>
+    <p class="text-center text-muted mb-4">Responderemos a tu correo electrónico a la brevedad.</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Enviar Consulta</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

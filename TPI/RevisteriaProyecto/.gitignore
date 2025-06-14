@@ -1,0 +1,9 @@
+.vscode/
+.history/
+.idea/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db

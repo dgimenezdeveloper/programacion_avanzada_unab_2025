@@ -1,0 +1,19 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}{{ titulo_form }}{% endblock %}
+{% block header_title %}{{ titulo_form }}{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        <div class="d-grid mt-4 gap-2">
+            <button type="submit" class="btn btn-success btn-lg">Guardar Cambios</button>
+            <a href="{{ request.META.HTTP_REFERER|default_if_none:'tienda:index' }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
