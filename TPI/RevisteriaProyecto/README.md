@@ -126,6 +126,3 @@ Accede a la aplicación en [http://localhost:8000/](http://localhost:8000/)
 El informe completo y la presentación se encuentran en la carpeta raíz del repositorio.
 
 ---
-
-
-¡Gracias por visitar La Antigua Revistería! Esperamos que este proyecto te inspire a aplicar POO y patrones de diseño en tus propias aplicaciones Django.
