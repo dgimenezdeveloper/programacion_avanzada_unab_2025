@@ -10,7 +10,8 @@
     {% for producto in productos %}
     <div class="col">
         <div class="card h-100 card-product-list">
-             <a href="{% url 'tienda:producto_detail' producto.id %}" class="text-decoration-none text-dark">
+             <!-- ===== ESTA ES LA LÍNEA QUE SE CORRIGE ===== -->
+             <a href="{% url 'tienda:producto_detail' producto.categoria producto.id %}" class="text-decoration-none text-dark">
                 {% if producto.imagen %}
                     <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.titulo }}">
                 {% else %}

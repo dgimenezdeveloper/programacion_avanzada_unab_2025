@@ -61,12 +61,22 @@ class ProductoDetailView(DetailView):
     template_name = 'tienda/producto_detail.html'
     context_object_name = 'producto'
 
-    def get_object(self):
+    def get_object(self, queryset=None):
+        # Obtenemos la categoría y la pk de los argumentos de la URL
+        categoria = self.kwargs.get('categoria')
         pk = self.kwargs.get('pk')
-        try:
-            return Libro.objects.get(pk=pk)
-        except Libro.DoesNotExist:
+
+        # Buscamos en el modelo correcto basado en la categoría
+        if categoria == 'libro':
+            # get_object_or_404 es una forma más limpia de hacer try/except
+            return get_object_or_404(Libro, pk=pk)
+        elif categoria == 'merchandising':
             return get_object_or_404(Merchandising, pk=pk)
+        
+        # Si la categoría no es válida, puedes devolver un error 404
+        # o manejarlo como prefieras.
+        from django.http import Http404
+        raise Http404("Categoría de producto no válida")
 
 class ProductoCreateView(StaffRequiredMixin, CreateView):
     template_name = 'tienda/producto_form.html'
