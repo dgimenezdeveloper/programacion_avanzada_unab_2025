@@ -1,9 +1,22 @@
-.vscode/
-.history/
-.idea/
+# Entorno Virtual
 venv/
+
+# Base de datos
+#db.sqlite3
+#*.sqlite3
+
+# Caché de Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-*.db
+
+# Archivos de Medios (imágenes subidas por usuarios)
+# Generalmente no se suben al repo, pero para una entrega académica puedes
+# decidir subirlos. Si quieres excluirlos, descomenta la siguiente línea:
+# /media/
+
+# Archivos de configuración local (si los tuvieras)
+.env
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
