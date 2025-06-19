@@ -180,6 +180,9 @@ def carrito_view(request):
 
 @login_required
 def agregar_al_carrito(request, producto_id):
+    if not hasattr(request.user, 'perfil') or request.user.perfil.rol != 'cliente':
+        messages.error(request, "Debes ser un cliente para agregar productos al carrito.")
+        return redirect('tienda:index')
     carrito = Carrito(request)
     try: producto = Libro.objects.get(id=producto_id)
     except Libro.DoesNotExist: producto = get_object_or_404(Merchandising, id=producto_id)
