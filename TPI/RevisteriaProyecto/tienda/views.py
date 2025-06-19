@@ -108,7 +108,7 @@ class ProductoUpdateView(StaffRequiredMixin, UpdateView):
         return LibroForm if isinstance(self.object, Libro) else MerchandisingForm
 
     def get_success_url(self):
-        return reverse_lazy('tienda:producto_detail', kwargs={'pk': self.object.pk})
+        return reverse_lazy('tienda:producto_detail', kwargs={'categoria': self.object.categoria, 'pk': self.object.pk})
 
     def form_valid(self, form):
         messages.success(self.request, 'Producto actualizado con éxito.')

@@ -13,7 +13,7 @@
         {% csrf_token %}
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
             <button type="submit" class="btn btn-danger btn-lg">Sí, Eliminar</button>
-            <a href="{% url 'tienda:producto_detail' producto.id %}" class="btn btn-secondary btn-lg">No, Cancelar</a>
+            <a href="{% url 'tienda:producto_detail' producto.categoria producto.id %}" class="btn btn-secondary btn-lg">No, Cancelar</a>
         </div>
     </form>
 </div>
