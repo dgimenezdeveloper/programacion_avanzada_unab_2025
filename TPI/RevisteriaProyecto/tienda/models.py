@@ -5,6 +5,10 @@ from django.dispatch import receiver
 
 # --- MODELO BASE ABSTRACTO ---
 class Producto(models.Model):
+    """ Modelo base abstracto para productos de la tienda.
+        Contiene campos comunes a todos los productos como título, precio, imagen, categoría, descripción,
+        fecha de creación y si es novedad.
+        Los modelos concretos como Libro y Merchandising heredarán de este modelo."""
     CATEGORIA_CHOICES = (
         ('libro', 'Libro'),
         ('merchandising', 'Merchandising'),
@@ -28,9 +32,12 @@ class Producto(models.Model):
 
 # --- MODELOS CONCRETOS QUE HEREDAN DE PRODUCTO ---
 class Libro(Producto):
+    """ Modelo concreto para libros que hereda de Producto.
+        Añade un campo específico para el autor del libro."""
     autor = models.CharField(max_length=100, null=True, blank=True)
     
     def save(self, *args, **kwargs):
+        """ Sobrescribe el método save para establecer la categoría como 'libro' al guardar."""
         self.categoria = 'libro'
         super().save(*args, **kwargs)
 
@@ -39,7 +46,9 @@ class Libro(Producto):
         verbose_name_plural = "Libros"
 
 class Merchandising(Producto):
+    """ Modelo concreto para merchandising que hereda de Producto."""
     def save(self, *args, **kwargs):
+        """ Sobrescribe el método save para establecer la categoría como 'merchandising' al guardar."""
         self.categoria = 'merchandising'
         super().save(*args, **kwargs)
 
@@ -49,6 +58,8 @@ class Merchandising(Producto):
 
 # --- MODELO PARA CONSULTAS ---
 class Consulta(models.Model):
+    """ Modelo para almacenar consultas de los usuarios.
+        Contiene campos para el nombre del usuario, email, consulta y fecha."""
     nombre = models.CharField(max_length=100)
     email = models.EmailField()
     consulta = models.TextField()
@@ -64,6 +75,8 @@ class Consulta(models.Model):
 
 # --- MODELO ÚNICO DE PERFIL DE USUARIO ---
 class Perfil(models.Model):
+    """ Modelo para almacenar el perfil de usuario.
+        Contiene un campo de relación uno a uno con User y un campo para el rol del usuario (cliente o staff)."""
     ROL_CHOICES = (('cliente', 'Cliente'), ('staff', 'Staff'))
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='perfil')
     rol = models.CharField(max_length=10, choices=ROL_CHOICES, default='cliente')

@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Libro, Merchandising, Consulta, User
 
 class LibroForm(forms.ModelForm):
+    """ Formulario para crear o editar un libro. Hereda de ModelForm y utiliza el modelo Libro."""
     class Meta:
         model = Libro
         fields = ['titulo', 'autor', 'precio', 'imagen', 'texto', 'es_novedad']
@@ -15,6 +16,7 @@ class LibroForm(forms.ModelForm):
         }
 
 class MerchandisingForm(forms.ModelForm):
+    """ Formulario para crear o editar merchandising. Hereda de ModelForm y utiliza el modelo Merchandising."""
     class Meta:
         model = Merchandising
         fields = ['titulo', 'precio', 'imagen', 'texto', 'es_novedad']
@@ -26,6 +28,7 @@ class MerchandisingForm(forms.ModelForm):
         }
 
 class ConsultaForm(forms.ModelForm):
+    """ Formulario para enviar una consulta. Hereda de ModelForm y utiliza el modelo Consulta."""
     class Meta:
         model = Consulta
         fields = ['nombre', 'email', 'consulta']
@@ -36,11 +39,12 @@ class ConsultaForm(forms.ModelForm):
         }
 
 class RegistroForm(UserCreationForm):
+    """ Formulario para registrar un nuevo usuario. Hereda de UserCreationForm y utiliza el modelo User."""
     class Meta(UserCreationForm.Meta):
         model = User
         fields = ('username', 'first_name', 'last_name', 'email')
         
-        # Opcional: para que se vea bien con bootstrap
+        # Para que se vea bien con bootstrap
         for field_name in fields:
             widgets = {
                 'username': forms.TextInput(attrs={'class': 'form-control'}),

@@ -1,5 +1,6 @@
 
 class Carrito:
+    """ Clase para manejar el carrito de compras."""
     def __init__(self, request):
         self.request = request
         self.session = request.session
