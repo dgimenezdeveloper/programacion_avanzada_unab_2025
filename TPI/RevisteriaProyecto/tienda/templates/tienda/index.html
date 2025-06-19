@@ -27,10 +27,8 @@
                     <p class="card-text fs-5 fw-bold text-success">${{ producto.precio }}</p>
                 </div>
             </a>
-
             <div class="card-footer bg-transparent border-0 text-center pb-3">
                 {% if user.is_authenticated and user.perfil.rol == 'staff' %}
-                <!-- Opciones para el Staff -->
                 <div class="btn-group" role="group" aria-label="Opciones de Staff">
                     <a href="{% url 'tienda:producto_update' producto.id %}"
                         class="btn btn-sm btn-outline-warning">Editar</a>
@@ -38,7 +36,6 @@
                         class="btn btn-sm btn-outline-danger">Eliminar</a>
                 </div>
                 {% else %}
-                <!-- Botón para Clientes y Visitantes -->
                 <a href="{% url 'tienda:carrito_agregar' producto.id %}" class="btn btn-primary">Agregar al Carrito</a>
                 {% endif %}
             </div>
