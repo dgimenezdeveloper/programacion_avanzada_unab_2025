@@ -124,6 +124,7 @@ Accede a la aplicación en [http://localhost:8000/](http://localhost:8000/)
 ## Enlace al informe y presentación
 
 El informe completo y la presentación se encuentran en la carpeta raíz del repositorio.
-https://docs.google.com/presentation/d/1j9wyg5QFc266OlZlNLUeFozaSedU3mDXcvNZ5HV7RB8/edit?usp=sharing
+
+Presentación: https://docs.google.com/presentation/d/1j9wyg5QFc266OlZlNLUeFozaSedU3mDXcvNZ5HV7RB8/edit?usp=sharing
 
 ---
